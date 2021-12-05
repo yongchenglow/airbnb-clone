@@ -36,7 +36,7 @@ jobs:
 
       - name: Run linters
         run: |
-          bin/rubocop --parallel
+          bundle exec rubocop --parallel
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -58,10 +58,10 @@ jobs:
           PGHOST: localhost
           PGUSER: myapp
         run: |
-          bin/rails db:setup
+          bundle exec rails db:setup
 
       - name: Run rspec tests
-        run: bin/rspec
+        run: bundle exec rspec
 
       - name: Run rake tests
         run: bundle exec rake
