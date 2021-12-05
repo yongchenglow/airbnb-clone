@@ -10,6 +10,10 @@
 
 [Database Schema](https://dbdiagram.io/d/61acad6c8c901501c0e11416) is done using dbdiagram.io
 
+### Wireframe
+
+Due to time constraints a [lo-fi wireframe](https://www.figma.com/file/HXM8NutEl5Qm9NMSnRI1WM/Untitled?node-id=0%3A1) is done using figma
+
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 ## Table of Contents
