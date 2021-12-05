@@ -166,6 +166,10 @@ touch rubyonrails.yml
 
 add the following [content](./.github/workflows/rubyonrails.yml) to rubyonrails.yml
 
+### Setup Slack and Github Integration
+
+The Github bot should already be added to the LeWagon Slack Channel
+
 ## License
 
 [GNU GENERAL PUBLIC LICENSE](./LICENSE)
