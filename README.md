@@ -132,6 +132,26 @@ Adjust your VS Code settings `code > preferences > settings`, add a `,` at the e
 
 If there is a yellow squigily line in your settings.json, most likely the code is repeated. Try to combine them.
 
+### Add Commit Linting
+
+```
+yarn add --dev @commitlint/cli
+yarn add --dev @commitlint/config-conventional
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+yarn add husky --dev
+yarn husky install
+yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'
+touch commimtlint.config.js
+```
+
+Go to commitlint.config.js and copy and paste the following [code](./commitlint.config.js). Then run the following command.
+
+```
+npx commitlint --from HEAD~1 --to HEAD --verbose
+```
+
+You should get a commit message stating whether there are any errors or warnings. This will keep the commit messages clean. Adjust commitlint.config.js accordingly to your commit style. Add the necessary modules to ensure that your commit messages makes sense.
+
 ## License
 
 [GNU GENERAL PUBLIC LICENSE](./LICENSE)
