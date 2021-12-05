@@ -1,5 +1,7 @@
 # AirBNB Clone
 
+[Visit my AirBNB Clone](https://airbnb-yongchenglow.herokuapp.com)
+
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 ## Table of Contents
@@ -190,6 +192,37 @@ You will be prompt to connect to your github account and enter a code. Follow th
 2. When you create a pull request
 3. When you complete a code review
 4. When you merge a pull request to master
+
+### Setting up Heroku Integration
+
+We will be setting up automatic deployments of the master branch once we push to master. Do take note that for your review applications, you should be using manual deployments.
+
+To create an application
+
+```
+heroku create <APP_NAME> --region=eu
+
+```
+
+To do a manual deployment
+
+```
+git push heroku master
+heroku run rails db:migrate
+
+```
+
+To setup automatic deployment please follow the [article](https://devcenter.heroku.com/articles/github-integration)
+
+1. Login to Heroku
+2. Create an application
+3. Go to Deploy
+4. Connect to Github
+5. Select the Branch for Automatic Deployment
+6. Search for the Branch
+7. Select enable automatic deploys
+
+\*Take note that you should be setting up 2 url if you are the project manager. 1 should be your final project URL, another one should be your review application URL for your merge request.
 
 ## License
 
