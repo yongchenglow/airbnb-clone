@@ -152,6 +152,20 @@ npx commitlint --from HEAD~1 --to HEAD --verbose
 
 You should get a commit message stating whether there are any errors or warnings. This will keep the commit messages clean. Adjust commitlint.config.js accordingly to your commit style. Add the necessary modules to ensure that your commit messages makes sense.
 
+### Setup Github Workflow
+
+This second will setup a github workflow, this will ensure that code merged to master branch is always compilable
+
+```
+mkdir .github
+cd .github
+mkdir workflows
+cd workflows
+touch rubyonrails.yml
+```
+
+add the following [content](./.github/workflows/rubyonrails.yml) to rubyonrails.yml
+
 ## License
 
 [GNU GENERAL PUBLIC LICENSE](./LICENSE)
