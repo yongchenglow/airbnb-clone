@@ -88,6 +88,50 @@ This sections tells you in general how to do a simple code review using Github. 
 9. Repeat the code review process until the code is clean.
 10. The assignee of the code should be the one merging to master
 
+### Setting up VSCode extensions
+
+You can setup some recommended extensions for VS code. These will include some of the recommended extensions from [here](https://betterprogramming.pub/vs-code-extensions-for-ruby-on-rails-developers-917474e03e04) and my own
+
+```
+mkdir .vscode
+cd .vscode
+touch extensions.json
+```
+
+Copy and paste the content from the following [file](./.vscode/extensions.json)
+VS code should ask you to install some of the recommended extensions. Install and enable them.
+
+Run the following command in the command line
+
+`gem install htmlbeautifier`
+
+Adjust your VS Code settings `code > preferences > settings`, add a `,` at the end of the file and paste the following code
+
+```
+"files.associations": {
+  "*.erb": "erb"
+},
+"[erb]": {
+  "editor.defaultFormatter":"aliariff.vscode-erb-beautify" ,
+},
+"[html]": {
+  "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+},
+"emmet.includeLanguages": {
+        "erb": "html"
+      },
+"emmet.showAbbreviationSuggestions": true,
+"emmet.showSuggestionsAsSnippets": true,
+"editor.bracketPairColorization.enabled": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+  "source.fixAll": true
+},
+```
+
+If there is a yellow squigily line in your settings.json, most likely the code is repeated. Try to combine them.
+
 ## License
 
 [GNU GENERAL PUBLIC LICENSE](./LICENSE)
