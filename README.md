@@ -7,8 +7,16 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 1. [Running the Application on your computer](#running-the-application-on-your-computer)
    1. [Setting up your computer](#setting-up-your-computer)
    2. [Running the project on your local machine](#running-the-project-on-your-local-machine)
-2. [How is this project created](#how-is-this-project-created)
-3. [License](#license)
+2. [Project Workflow](#project-workflow)
+3. [How to do a code review](#how-to-do-a-code-review)
+4. [How is this project created](#how-is-this-project-created)
+   1. [Initializing the Repository](#initializing-the-repository)
+   2. [Setting up Github Projects](#setting-up-github-projects)
+   3. [Setting up Github Workflows](#setting-up-github-workflows)
+   4. [Setting up VSCode Extensions](#setting-up-vscode-extensions)
+   5. [Setting up commit linting](#setting-up-commit-linting)
+   6. [Setting up Slack and Github Integration](#setting-up-slack-and-github-integration)
+5. [License](#license)
 
 ## Running the Application on your Computer
 
@@ -29,7 +37,39 @@ rails db:create db:migrate
 rails s
 ```
 
-## How is the project created
+## Project Workflow
+
+1. Create a Card with a short description in the Todo column.
+2. Once you want to work on the task move the task to implementation.
+3. Select the 3 dots on the card and convert the card to an issue. There is no need to write anything in the body.
+4. Once the card is converted to the issue. A notification will be sent to the slack channel if you have set it up.
+5. Open the issue and then select an assignee, and add a label
+6. Edit the empty description and start to write down the specifications of the card. Sometimes it is helpful to add a checklist of what needs to be done
+7. Create a branch and work on the issue
+8. Once completed, create a pull request, add assignee, label. link the issue to your pull request and project. A notification will be setn to the slack channel if you have set it up. You can comment on the slack notification to get one of you partner to review it.
+9. Once you have done all of this, Move the card to [code review](#how-to-do-a-code-review).
+10. Once the reviewer has submitted their review, a slack notification will be sent to the group. This is to tell the owner of the pull request to either make the necessary changes or merge the branch to master.
+11. You can create a thread through the slack notifications once ready for re-review
+12. Once the review gives you the Looks Good to Me and approves the request. At this point in time all the Github Workflows should pass.
+13. Once everything is good the Assignee Merge the branch to master and move the card to Eureka
+14. Congratulations! You have completed your first issue!
+
+## How to do a code review
+
+This sections tells you in general how to do a simple code review using Github. I assumed you have created a merge question and your team is using the project workflow mentioned above. The most important rule for code review is that `Assignee cannot be the Code Reviewer`
+
+1. Read the Github Issue, it should be linked to the Merge Request
+2. Read the Merge Request description at the top
+3. Go to the files changed tab changes should be in green, deletions should be in red
+4. Review the code. [You can refer to the following as a guide on what to look out for](https://blog.palantir.com/code-review-best-practices-19e02780015f)
+5. Select the plus icon beside (you can do multiple as well) for the section of code to comment on.
+6. Add your comment
+7. Select the Start a review button
+8. Once you reviewed all the code, select the viewed file button, and the review changes button at the top and click on the submit review button. A slack notification should be sent to the channel telling the Assignee that the code has been reviewed.
+9. Repeat the code review process until the code is clean.
+10. The assignee of the code should be the one merging to master
+
+## How is this project created
 
 ### Initializing the Repository
 
@@ -45,48 +85,16 @@ gh repo create
 git push origin master
 ```
 
-### Creating your Github Projects
+\*Note that for some of you you will have to run `git push origin main` instead of `git push origin master`
+
+### Setting up Github Projects
 
 For this project, we will be using Github Projects as our project management tool.
 
 1. Go to the Github Repository that you just created
-2. Select he Projects Tab
+2. Select the Projects Tab
 3. Create a new Projects
-4. Create 5 columns [Todo, Specificaiton, Implementation, Code Review, Eureka]
-
-### Workflow for Github Projects
-
-1. Create a Tasks in Todo. This task should be a short description of what needs to be done.
-2. Once you want to work on the task move the task to specification
-3. Select the 3 dots on the card and convert the card to an issue. There is no need to write anything in the body.
-4. Once the card is converted to the issue, open the issue and start to spec out the card. Edit the empty body.
-5. Add a checklist of what needs to be done and any additional details or description that needs to be done
-6. Select an assignee, and add a label
-7. Create a branch and work on the issue
-8. Create a pull request, add assignee, label and project
-9. Go back to the Github Issue and link the Pull Request to the issue
-10. Once you have done all of this, Move the card to implementation.
-11. Once the implementation is done, push your code to the branch and put any additional details of what is changed to the first description.
-12. Move the card to Code Review (Pending)
-13. Once the reviewer finished the review move it to Code Review (Done)
-14. If more changes are required move the card back to implementation and repeat 11 to 13 until everthing is good
-15. Once everything is completed, move the card to Eureka
-16. Congratulations! You have completed your first issue!
-
-### How to code review
-
-This sections tells you in general how to do a simple code review using Github. I assumed you have created a merge question and your team is using the project workflow mentioned above. The most important rule for code review is that `Assignee cannot be the Code Reviewer`
-
-1. Read the Github Issue, it should be linked to the Merge Request
-2. Read the Merge Request description at the top
-3. Go to the files changed tab changes should be in green, deletions should be in red
-4. Review the code. [You can refer to the following as a guide on what to look out for](https://blog.palantir.com/code-review-best-practices-19e02780015f)
-5. Select the plus icon beside (you can do multiple as well) for the section of code to comment on.
-6. Add your comment
-7. Select the Start a review button
-8. Once the review is completed, move to code review (done)
-9. Repeat the code review process until the code is clean.
-10. The assignee of the code should be the one merging to master
+4. Create 4 columns [Todo, Implementation, Code Review, Eureka]
 
 ### Setting up VSCode extensions
 
@@ -132,7 +140,7 @@ Adjust your VS Code settings `code > preferences > settings`, add a `,` at the e
 
 If there is a yellow squigily line in your settings.json, most likely the code is repeated. Try to combine them.
 
-### Add Commit Linting
+### Setting up Commit Linting
 
 ```
 yarn add --dev @commitlint/cli
@@ -166,9 +174,22 @@ touch rubyonrails.yml
 
 add the following [content](./.github/workflows/rubyonrails.yml) to rubyonrails.yml
 
-### Setup Slack and Github Integration
+### Setting up Slack and Github Integration
 
 The Github bot should already be added to the LeWagon Slack Channel
+Create a new channel call `batch-692-{project}-{github}`
+
+```
+/invite @GitHub
+/github subscribe {githubUsername}/{repositoryName} reviews
+```
+
+You will be prompt to connect to your github account and enter a code. Follow the instructions and your slack channel will be subscribed to your Github Repository. You should be receiving notifications for the following actions:
+
+1. When you convert to issue, You will take ownership of the item
+2. When you create a pull request
+3. When you complete a code review
+4. When you merge a pull request to master
 
 ## License
 
