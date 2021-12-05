@@ -66,8 +66,28 @@ For this project, we will be using Github Projects as our project management too
 8. Create a pull request, add assignee, label and project
 9. Go back to the Github Issue and link the Pull Request to the issue
 10. Once you have done all of this, Move the card to implementation.
-11. Once the implementation is done, push your code to the branch and put any additional details in the Merge Request.
-12. Move the card to Code Review
-13. Once the code passes the Code Review, merge the branch
-14. Move the card to Eureka
-15. Congratulations! You have completed your first issue!
+11. Once the implementation is done, push your code to the branch and put any additional details of what is changed to the first description.
+12. Move the card to Code Review (Pending)
+13. Once the reviewer finished the review move it to Code Review (Done)
+14. If more changes are required move the card back to implementation and repeat 11 to 13 until everthing is good
+15. Once everything is completed, move the card to Eureka
+16. Congratulations! You have completed your first issue!
+
+### How to code review
+
+This sections tells you in general how to do a simple code review using Github. I assumed you have created a merge question and your team is using the project workflow mentioned above. The most important rule for code review is that `Assignee cannot be the Code Reviewer`
+
+1. Read the Github Issue, it should be linked to the Merge Request
+2. Read the Merge Request description at the top
+3. Go to the files changed tab changes should be in green, deletions should be in red
+4. Review the code. [You can refer to the following as a guide on what to look out for](https://blog.palantir.com/code-review-best-practices-19e02780015f)
+5. Select the plus icon beside (you can do multiple as well) for the section of code to comment on.
+6. Add your comment
+7. Select the Start a review button
+8. Once the review is completed, move to code review (done)
+9. Repeat the code review process until the code is clean.
+10. The assignee of the code should be the one merging to master
+
+## License
+
+[GNU GENERAL PUBLIC LICENSE](./LICENSE)
