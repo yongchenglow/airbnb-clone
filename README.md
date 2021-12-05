@@ -2,6 +2,10 @@
 
 [Visit my AirBNB Clone](https://airbnb-yongchenglow.herokuapp.com)
 
+### Story Mapping
+
+[Story Map](https://miro.com/app/board/uXjVOdIJ8AE=/?invite_link_id=251045537158) is done using the miro web application
+
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 ## Table of Contents
