@@ -1,6 +1,9 @@
 {
   "name": "airbnb-clone",
   "private": true,
+  "scripts": {
+    "pre-commit": "lint-staged"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -15,6 +18,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "husky": "^7.0.4",
     "webpack-dev-server": "^3"
   }
 }
