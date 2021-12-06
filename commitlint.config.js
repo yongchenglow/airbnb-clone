@@ -17,6 +17,7 @@ module.exports = {
         "Release",
         "Housekeeping",
         "Config",
+        "User",
       ],
     ],
   },
