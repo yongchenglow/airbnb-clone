@@ -18,6 +18,7 @@ module.exports = {
         "Housekeeping",
         "Config",
         "User",
+        "Flat",
       ],
     ],
   },
