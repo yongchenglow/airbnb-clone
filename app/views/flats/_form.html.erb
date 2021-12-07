@@ -1,0 +1,29 @@
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :title,
+              required: true,
+              :input_html => { autocomplete: "title" } %>
+  <%= f.input :description,
+              required: true,
+              :input_html => { autocomplete: "description" } %>
+  <%= f.input :address,
+              required: true,
+              :input_html => { autocomplete: "address" } %>
+  <%= f.input :bed,
+              as: :numeric,
+              required: true,
+              :input_html => { autocomplete: "bed" } %>
+  <%= f.input :bath,
+              as: :numeric,
+              required: true,
+              :input_html => { autocomplete: "bath" } %>
+  <%= f.input :bedroom,
+              as: :numeric,
+              required: true,
+              :input_html => { autocomplete: "bedroom" } %>
+  <%= f.input :price,
+              required: true,
+              :input_html => {
+                autocomplete: "price",
+                value: number_with_precision(f.object.price, precision: 2) }%>
+  <%= f.submit %>
+<% end %>
