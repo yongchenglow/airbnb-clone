@@ -13,4 +13,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :flats, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 end
