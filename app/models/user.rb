@@ -10,5 +10,7 @@ class User < ApplicationRecord
   end
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :flats, dependent: :destroy
 end
