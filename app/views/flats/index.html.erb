@@ -1,6 +1,39 @@
-All Flats
-<ul>
-  <% @flats.each do |flat| %>
-    <li><%= link_to flat.title, flat_path(flat) %></li>
-  <% end %>
-</ul>
+<h1>Listing Flats</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @flats.each do |flat| %>
+      <tr>
+        <td><%= flat.title %></td>
+        <td><%= flat.description %></td>
+        <td><%= flat.price %></td>
+        <td>
+          <% if policy(flat).show? %>
+            <%= link_to 'Show', flat %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(flat).update? %>
+            <%= link_to 'Edit', edit_flat_path(flat) %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(flat).destroy? %>
+            <%= link_to 'Delete', flat, method: :delete, data: { confirm: 'Are you sure you want to delete this flat?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if policy(Flat).create? %>
+  <%= link_to 'New Flat', new_flat_path %>
+<% end %>

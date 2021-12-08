@@ -14,6 +14,8 @@ class FlatPolicy < ApplicationPolicy
   end
 
   def update?
+    puts "__________________"
+    puts record.user
     record.user == user
   end
 

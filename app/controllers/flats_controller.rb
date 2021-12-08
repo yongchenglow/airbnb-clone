@@ -18,8 +18,6 @@ class FlatsController < ApplicationController
     @flat = current_user.flats.new(flat_params)
     authorize @flat
 
-    @flat.user_id = current_user
-
     if @flat.save
       redirect_to @flat
     else

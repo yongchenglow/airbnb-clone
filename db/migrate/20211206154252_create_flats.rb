@@ -1,14 +1,14 @@
 class CreateFlats < ActiveRecord::Migration[6.1]
   def change
     create_table :flats do |t|
-      t.string :title
-      t.string :description
-      t.string :address
-      t.integer :bed
-      t.integer :bath
-      t.integer :bedroom
-      t.decimal :price
-      t.belongs_to :user, index: true, foreign_key: true
+      t.string :title, null: false
+      t.string :description, null: false
+      t.string :address, null: false
+      t.integer :bed, null: false
+      t.integer :bath, null: false
+      t.integer :bedroom, null: false
+      t.decimal :price, null: false
+      t.references :user, null: false, index: true
 
       t.timestamps
     end

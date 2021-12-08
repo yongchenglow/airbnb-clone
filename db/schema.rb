@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 2021_12_06_154252) do
   enable_extension "plpgsql"
 
   create_table "flats", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "address"
-    t.integer "bed"
-    t.integer "bath"
-    t.integer "bedroom"
-    t.decimal "price"
-    t.bigint "user_id"
+    t.string "title", null: false
+    t.string "description", null: false
+    t.string "address", null: false
+    t.integer "bed", null: false
+    t.integer "bath", null: false
+    t.integer "bedroom", null: false
+    t.decimal "price", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_flats_on_user_id"
@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(version: 2021_12_06_154252) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "flats", "users"
 end
