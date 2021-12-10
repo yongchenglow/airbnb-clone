@@ -5,6 +5,9 @@
 <p><%= @flat.bath %></p>
 <p><%= @flat.bedroom %></p>
 <p><%= @flat.price %></p>
+<% @flat.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <ul class="list-group">
   <% @flat.bookings.each do |booking| %>
     <li class="list-group-item">
