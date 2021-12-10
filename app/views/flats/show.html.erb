@@ -5,5 +5,17 @@
 <p><%= @flat.bath %></p>
 <p><%= @flat.bedroom %></p>
 <p><%= @flat.price %></p>
+<ul class="list-group">
+  <% @flat.bookings.each do |booking| %>
+    <li class="list-group-item">
+      <%= booking.checkin_date %>,<%= booking.checkout_date %>,<%= booking.guest %>
+      <%= link_to "Remove",
+                  booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete a booking?" } %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_flat_path(@flat) %> |
 <%= link_to 'Back', flats_path %>
+<%= link_to 'Book', new_flat_booking_path(@flat) %>

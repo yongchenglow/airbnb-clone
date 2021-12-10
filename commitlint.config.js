@@ -19,6 +19,7 @@ module.exports = {
         "Config",
         "User",
         "Flat",
+        "Booking",
       ],
     ],
   },

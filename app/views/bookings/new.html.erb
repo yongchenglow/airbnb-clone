@@ -1,0 +1,15 @@
+<%= simple_form_for [ @flat, @booking ] do |f| %>
+  <%= f.input :checkin_date,
+              as: :date,
+              required: true,
+              :input_html => { autocomplete: "checkin date" } %>
+  <%= f.input :checkout_date,
+              as: :date,
+              required: true,
+              :input_html => { autocomplete: "checkout date" } %>
+  <%= f.input :guest,
+              as: :numeric,
+              required: true,
+              :input_html => { autocomplete: "guest" } %>
+  <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+<% end %>
