@@ -15,4 +15,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :flats, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  validates :avatar, aspect_ratio: :is_1_1
 end
