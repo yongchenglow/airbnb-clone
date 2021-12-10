@@ -1,4 +1,8 @@
 <h1>Listing Flats</h1>
+<%= cl_image_tag("user_cb10ya",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag( current_user.avatar.key,
+      width: 400, height: 300, crop: :fill) %>
 <table>
   <thead>
     <tr>
