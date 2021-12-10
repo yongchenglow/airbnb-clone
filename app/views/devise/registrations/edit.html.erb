@@ -9,13 +9,6 @@
     <%= f.input :last_name,
                 required: true,
                 input_html: { autocomplete: "last-name" } %>
-    <%= f.input :role,
-                as: :radio_buttons,
-                collection: [[:traveler, "Traveler"], [:host, "Host"]],
-                label_method: :second,
-                value_method: :first,
-                required: true,
-                input_html: { autocomplete: "role" } %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>

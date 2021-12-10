@@ -10,7 +10,7 @@
     <li class="list-group-item">
       <%= booking.checkin_date %>,<%= booking.checkout_date %>,<%= booking.guest %>
       <%= link_to "Remove",
-                  review_path(booking),
+                  booking_path(booking),
                   method: :delete,
                   data: { confirm: "Are you sure you want to delete a booking?" } %>
     </li>
