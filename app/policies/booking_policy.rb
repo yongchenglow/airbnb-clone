@@ -1,4 +1,4 @@
-class FlatPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -11,10 +11,6 @@ class FlatPolicy < ApplicationPolicy
 
   def create?
     true
-  end
-
-  def update?
-    record.user == user
   end
 
   def destroy?
