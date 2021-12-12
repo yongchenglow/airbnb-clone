@@ -6,12 +6,12 @@ class FlatsController < ApplicationController
     @flats = policy_scope(Flat)
 
     @markers = @flats.geocoded.map do |flat|
-    {
-      lat: flat.latitude,
-      lng: flat.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
-      image_url: helpers.asset_url('location-pin.png')
-    }
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url('location-pin.png')
+      }
     end
   end
 
