@@ -8,6 +8,8 @@ class CreateFlats < ActiveRecord::Migration[6.1]
       t.integer :bath, null: false
       t.integer :bedroom, null: false
       t.decimal :price, null: false
+      t.float :latitude, null: true
+      t.float :longitude, null: true
       t.references :user, null: false, index: true
 
       t.timestamps

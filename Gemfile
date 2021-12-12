@@ -36,6 +36,7 @@ gem 'devise'
 gem 'pundit'
 gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
