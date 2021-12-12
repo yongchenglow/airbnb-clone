@@ -37,6 +37,7 @@ gem 'pundit'
 gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5'
 gem 'geocoder'
+gem 'pg_search', '~> 2.3.0'
 
 group :development, :test do
   gem 'pry-byebug'

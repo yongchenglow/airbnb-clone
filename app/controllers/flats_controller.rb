@@ -3,7 +3,11 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %I[show edit update destroy]
 
   def index
-    @flats = policy_scope(Flat)
+    if params[:query].present?
+      @flats = Flat.search_by_title_or_description_or_address(params[:query])
+    else
+      @flats = policy_scope(Flat)
+    end
 
     @markers = @flats.geocoded.map do |flat|
       {
