@@ -1,8 +1,8 @@
 <h1>Listing Flats</h1>
-<%= cl_image_tag("user_cb10ya",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag( current_user.avatar.key,
-      width: 400, height: 300, crop: :fill) %>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <table>
   <thead>
     <tr>

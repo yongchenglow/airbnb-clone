@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2021_12_10_161925) do
     t.integer "bath", null: false
     t.integer "bedroom", null: false
     t.decimal "price", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
