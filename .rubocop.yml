@@ -37,6 +37,8 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
   Max: 120
+Metrics/MethodLength:
+  Max: 120
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
