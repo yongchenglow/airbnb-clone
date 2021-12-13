@@ -4,8 +4,8 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.integer :guest, null: false
       t.datetime :checkout_date, null: false
       t.datetime :checkin_date, null: false
-      t.references :user, null: false, index: true
-      t.references :flat, null: false, index: true
+      t.references :user, null: false, foreign_key: true, index: true
+      t.references :flat, null: false, foreign_key: true, index: true
       t.timestamps
     end
   end
