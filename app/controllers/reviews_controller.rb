@@ -26,9 +26,8 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     @review.destroy
-    @review.booking_id
-    @flat = Flat.find()
-    redirect_to flat_path(@review.flat)
+    @flat = Flat.find(@review.booking.flat_id)
+    redirect_to flat_path(@flat)
   end
 
   private
