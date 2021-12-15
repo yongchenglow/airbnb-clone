@@ -1,5 +1,10 @@
-<%= simple_form_for [ @flat, @review ] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
+<%= simple_form_for [ @booking, @review ] do |f| %>
+  <%= f.input :rating,
+              as: :numeric,
+              required: true,
+              :input_html => { autocomplete: "rating" } %>
+  <%= f.input :content,
+              required: true,
+              :input_html => { autocomplete: "content" } %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>

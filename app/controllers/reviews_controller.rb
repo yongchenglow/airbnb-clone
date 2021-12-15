@@ -2,15 +2,16 @@ class ReviewsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @flat = Flat.find(params[:flat_id])
-    authorize @flat
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
     @review = Review.new
   end
 
   def create
-    @review = Booking.new(review_params)
-    @flat = Flat.find(params[:flat_id])
-    @review.flat = @flat
+    @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
+    @flat = Flat.find(@booking.flat_id)
+    @review.booking = @booking
     @review.user = current_user
     authorize @review
 
@@ -22,15 +23,17 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Booking.find(params[:id])
+    @review = Review.find(params[:id])
     authorize @review
     @review.destroy
+    @review.booking_id
+    @flat = Flat.find()
     redirect_to flat_path(@review.flat)
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:raiting, :content)
+    params.require(:review).permit(:rating, :content)
   end
 end

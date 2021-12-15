@@ -11,7 +11,11 @@
 <ul class="list-group">
   <% @flat.bookings.each do |booking| %>
     <li class="list-group-item">
-      <%= booking.checkin_date %>,<%= booking.checkout_date %>,<%= booking.guest %>
+      <%= booking.checkin_date %>,<%= booking.checkout_date %>,<%= booking.guest %>,
+      <ul class="list-group">
+        <li class="list-group-item"><%= booking.review.rating %>,<%= booking.review.content %></li>
+      </ul>
+      <%= link_to 'Leave a review', new_booking_review_path(booking) %>
       <%= link_to "Remove",
                   booking_path(booking),
                   method: :delete,
@@ -19,18 +23,6 @@
     </li>
   <% end %>
 </ul>
-<ul class="list-group">
-  <% @flat.reviews.each do |review| %>
-    <li class="list-group-item">
-      <%= review.rating %>, <%= review.content %>
-      <%= link_to "Remove",
-              review_path(review),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
 <%= link_to 'Edit', edit_flat_path(@flat) %> |
 <%= link_to 'Back', flats_path %>
 <%= link_to 'Book', new_flat_booking_path(@flat) %>
-<%= link_to 'Leave a review', new_flat_review_path(@flat)
