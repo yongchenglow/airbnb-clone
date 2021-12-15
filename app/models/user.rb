@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :flats, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews
 
   # rubocop:disable Naming/VariableNumber
   validates :avatar, aspect_ratio: :is_1_1

@@ -20,6 +20,8 @@ module.exports = {
         "User",
         "Flat",
         "Booking",
+        "Review",
+        "Favourite",
       ],
     ],
   },
