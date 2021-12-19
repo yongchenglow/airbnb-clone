@@ -41,6 +41,13 @@
             <%= link_to 'Delete', flat, method: :delete, data: { confirm: 'Are you sure you want to delete this flat?' } %>
           <% end %>
         </td>
+        <td>
+          <% if current_user.favourites.any? { |favourite| favourite.flat == flat } %>
+            <%= link_to 'Remove from Favourite', favourite_path(flat), method: :delete %>
+          <% else %>
+            <%= link_to 'Add to Favourite', favourites_path(flat), method: :post %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
