@@ -1,0 +1,34 @@
+<h1>Favourites</h1>
+<%= form_tag favourites_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search through favourites"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @favourites.each do |favourite| %>
+      <tr>
+        <td><%= favourite.flat.title %></td>
+        <td><%= favourite.flat.description %></td>
+        <td><%= favourite.flat.price %></td>
+        <td>
+          <% if policy(favourite).destroy? %>
+            <%= link_to 'Remove from Favourite', favourite_path(favourite.flat), method: :delete %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
