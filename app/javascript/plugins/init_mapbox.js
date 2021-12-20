@@ -11,7 +11,9 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup = new mapboxgl.Popup({ className: "apple-popup" }).setHTML(
+      marker.info_window
+    );
 
     // Create a HTML element for your custom marker
     const element = document.createElement("div");
