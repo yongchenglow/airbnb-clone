@@ -1,12 +1,32 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  margin: 0rem 1rem 0.25rem 1rem;
+}
+
+.nav-item a.nav-link {
+  padding-bottom: 0.25rem;
+}
+
+.nav-item.active {
+  border-bottom: 3px solid black;
+}
+
+.nav-item:hover:not(.nav-item.active) {
+  border-bottom: 3px solid black;
+  animation-name: fadeInBorder;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInBorder {
+  0% {
+    border-bottom: 3px solid transparent;
+  }
+  100% {
+    border-bottom: 3px solid black;
+  }
 }
