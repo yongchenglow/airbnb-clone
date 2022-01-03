@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <%= render 'shared/molecules/navbar' %>
+    <%= render 'shared/atoms/flashes' %>
+    <div class="py-3">
+      <div class="container-fluid d-flex justify-content-center mt-5">
+        <div class="card container-fixed-xxs">
+          <div class="card-body">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'shared/molecules/footer' %>
+  </body>
+</html>
