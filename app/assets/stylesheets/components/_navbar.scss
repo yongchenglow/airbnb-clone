@@ -14,7 +14,11 @@
   border-bottom: 3px solid black;
 }
 
-.nav-item:hover:not(.nav-item.active) {
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item:hover:not(.nav-item.active, .nav-item.dropdown) {
   border-bottom: 3px solid black;
   animation-name: fadeInBorder;
   animation-iteration-count: 1;

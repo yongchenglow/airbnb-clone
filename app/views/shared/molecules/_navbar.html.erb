@@ -8,10 +8,10 @@
       </div>
       <div class="collapse navbar-collapse flex-grow-0">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <li class="nav-item <%= active_class(root_path) %>">
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(flats_path) %>">
             <%= link_to "Flats", flats_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -19,18 +19,18 @@
           </li>
         </ul>
       </div>
-      <div class="collapse navbar-collapse flex-grow-0">
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profile", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
           <% else %>
-            <li class="nav-item">
+            <li class="nav-item <%= active_class(root_path) %>">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
@@ -42,6 +42,3 @@
     </div>
   </div>
 </nav>
-<script>
-  console.log("hello");
-</script>
