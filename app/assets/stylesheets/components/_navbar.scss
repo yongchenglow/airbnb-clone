@@ -11,7 +11,7 @@
 }
 
 .nav-item.active {
-  border-bottom: 3px solid black;
+  box-shadow: inset 0 -3px 0 black;
 }
 
 .navbar-light .navbar-nav .nav-item.active .nav-link {
@@ -19,7 +19,7 @@
 }
 
 .nav-item:hover:not(.nav-item.active, .nav-item.dropdown) {
-  border-bottom: 3px solid black;
+  box-shadow: inset 0 -3px 0 black;
   animation-name: fadeInBorder;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
@@ -28,9 +28,9 @@
 
 @keyframes fadeInBorder {
   0% {
-    border-bottom: 3px solid transparent;
+    box-shadow: inset 0 -3px 0 transparent;
   }
   100% {
-    border-bottom: 3px solid black;
+    box-shadow: inset 0 -3px 0 black;
   }
 }
