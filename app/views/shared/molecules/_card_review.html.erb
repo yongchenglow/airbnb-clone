@@ -1,0 +1,9 @@
+<div class="card-review">
+  <img src="<%= asset_path(image) %>" />
+  <div class="card-review-infos">
+    <div class="h6"><%= name %></div>
+    <% review.each do |line| %>
+      <div><%= line %></div>
+    <% end %>
+  </div>
+</div>

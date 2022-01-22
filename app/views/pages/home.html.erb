@@ -1,3 +1,123 @@
-<div class="container">
-  <%= render 'shared/molecules/banner', image: "banner.jpg", title: "Airbnb Clone", sub_title: "Enjoy the ultimate living experience", button_text: "Explore", button_link: "#" %>
-</div>
+<%= render 'shared/molecules/banner', image: "banner.jpg", title: "Airbnb Clone", sub_title: "Enjoy the ultimate living experience", button_text: "Explore", button_link: "#" %>
+<section class="container">
+  <h2 class="text-center">Featured</h2>
+  <p class="text-center text-muted">Explore some of our top experiences</p>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-3 justify-content-center">
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://source.unsplash.com/featured/400x300?house" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://source.unsplash.com/featured/400x300?house" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://source.unsplash.com/featured/400x300?house" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://source.unsplash.com/featured/400x300?house" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://source.unsplash.com/featured/400x300?house" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <h2 class="text-center mb-5">How to use Airbnb Clone?</h2>
+  <h4 class="text-center mb-4">Find a place to stay</h4>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">Explore</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">Book</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">Experience</p>
+    </div>
+  </div>
+  <h4 class="text-center mt-5 mb-4">Rent out an extra room</h4>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">List</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">Advertise</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/180x180?house" class="rounded-circle" alt="...">
+      <p class="h5 my-3">Profit</p>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <h2 class="text-center mb-5">What people say about us?</h2>
+  <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
+    <div class="col">
+      <%= render 'shared/molecules/card_review',
+            image: "userReviews/joey-nicotra-unsplash.jpg",
+            name: "Joey Nicotra",
+            review: ["Found a wonderful flat to stay in using Airbnb clone, me and my girlfriend had a wonderful holiday in Australia."] %>
+    </div>
+    <div class="col">
+      <%= render 'shared/molecules/card_review',
+            image: "userReviews/nathan-dumlao-unsplash.jpg",
+            name: "Nathan Dumlao",
+            review: ["Instead of staying at a hotel, brought my kids to stay in the woods for our holiday. They had a wonder time playing in the garden."] %>
+    </div>
+    <div class="col d-md-none d-xl-block">
+      <%= render 'shared/molecules/card_review',
+            image: "userReviews/vivek-kumar-unsplash.jpg",
+            name: "Vivek Kumar",
+            review: ["Went for a staycation together with my daughter. We had a wonderful time playing in the huge apartment we had to ourselves."] %>
+    </div>
+  </div>
+</section>
