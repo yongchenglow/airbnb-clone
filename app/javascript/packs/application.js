@@ -22,6 +22,7 @@ ActiveStorage.start();
 
 // External imports
 import "bootstrap";
+import "animate.css";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -31,4 +32,10 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   initMapbox();
   initAutocomplete();
+});
+
+document.addEventListener("close.bs.alert", (event) => {
+  event.preventDefault();
+  var alertNode = document.querySelector(".alert");
+  alertNode.classList.add("animate__bounceOutRight");
 });

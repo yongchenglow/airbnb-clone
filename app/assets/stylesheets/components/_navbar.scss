@@ -1,12 +1,36 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  margin: 0rem 1rem 0.25rem 1rem;
+}
+
+.nav-item a.nav-link {
+  padding-bottom: 0.25rem;
+}
+
+.nav-item.active {
+  box-shadow: inset 0 -3px 0 black;
+}
+
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item:hover:not(.nav-item.active, .nav-item.dropdown) {
+  box-shadow: inset 0 -3px 0 black;
+  animation-name: fadeInBorder;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInBorder {
+  0% {
+    box-shadow: inset 0 -3px 0 transparent;
+  }
+  100% {
+    box-shadow: inset 0 -3px 0 black;
+  }
 }

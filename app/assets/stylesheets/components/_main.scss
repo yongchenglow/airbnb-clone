@@ -1,0 +1,23 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
