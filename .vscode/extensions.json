@@ -5,15 +5,10 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "rebornix.ruby",
-    "kaiwood.endwise",
-    "rayhanw.erb-helpers",
-    "aki77.rails-db-schema",
-    "aliariff.vscode-erb-beautify",
-    "misogi.ruby-rubocop",
     "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "eamodio.gitlens",
-    "editorconfig.editorconfig",
     "ms-vsliveshare.vsliveshare"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
