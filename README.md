@@ -125,25 +125,26 @@ VS code should ask you to install some of the recommended extensions. Install an
 
 Run the following command in the command line
 
-`gem install htmlbeautifier`
-
 Adjust your VS Code settings `code > preferences > settings`, add a `,` at the end of the file and paste the following code
 
 ```
 "files.associations": {
   "*.erb": "erb"
 },
-"[erb]": {
-  "editor.defaultFormatter":"aliariff.vscode-erb-beautify" ,
+"files.associations": {
+  "*.erb": "erb"
 },
-"[html]": {
-  "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+"ruby.useBundler": true, //run non-lint commands with bundle exec
+"ruby.useLanguageServer": true, // use the internal language server (see below)
+"ruby.lint": {
+  "rubocop": {
+    "useBundler": true // enable rubocop via bundler
+  },
+  "reek": {
+    "useBundler": true // enable reek via bundler
+  }
 },
-"emmet.includeLanguages": {
-        "erb": "html"
-      },
-"emmet.showAbbreviationSuggestions": true,
-"emmet.showSuggestionsAsSnippets": true,
+"ruby.format": "rubocop" // use rubocop for formatting
 "editor.bracketPairColorization.enabled": true,
 "editor.defaultFormatter": "esbenp.prettier-vscode",
 "editor.formatOnSave": true,
