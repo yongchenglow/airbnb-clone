@@ -121,6 +121,9 @@ GEM
     geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -161,6 +164,11 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
+    prettier (3.1.2)
+      syntax_tree (>= 2.3.1)
+      syntax_tree-haml (>= 1.1.0)
+      syntax_tree-rbs (>= 0.2.0)
+    prettier_print (0.1.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -213,6 +221,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rbs (2.6.0)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -269,6 +278,17 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    syntax_tree (2.8.0)
+      prettier_print
+    syntax_tree-haml (1.2.0)
+      haml (>= 5.2)
+      prettier_print
+      syntax_tree (>= 2.0.1)
+    syntax_tree-rbs (0.4.0)
+      prettier_print
+      rbs
+      syntax_tree (>= 2.0.1)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -324,6 +344,7 @@ DEPENDENCIES
   mini_magick (>= 4.9.5)
   pg (~> 1.1)
   pg_search (~> 2.3.0)
+  prettier
   pry-byebug
   pry-rails
   puma (~> 5.0)

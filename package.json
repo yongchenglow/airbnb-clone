@@ -2,7 +2,9 @@
   "name": "airbnb-clone",
   "private": true,
   "scripts": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "prettier:fix": "yarn prettier --write '*'",
+    "prettier:check": "yarn prettier --check '*'"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
@@ -24,7 +26,9 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@prettier/plugin-ruby": "^3.1.2",
     "husky": "^7.0.4",
+    "prettier": "^2.7.1",
     "webpack-dev-server": "^3"
   }
 }
