@@ -2,6 +2,7 @@
   "name": "airbnb-clone",
   "private": true,
   "scripts": {
+    "lint": "yarn eslint app/javascript/**",
     "pre-commit": "lint-staged",
     "prettier:fix": "yarn prettier --write '*'",
     "prettier:check": "yarn prettier --check '*'"
@@ -27,6 +28,8 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@prettier/plugin-ruby": "^3.1.2",
+    "eslint": "^8.18.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.7.1",
     "prettier-plugin-erb": "^0.4.0",
