@@ -2,12 +2,12 @@
   "name": "airbnb-clone",
   "private": true,
   "scripts": {
-    "lint": "yarn eslint app/javascript/**",
+    "lint:check": "yarn eslint app/javascript/**",
     "lint:fix": "yarn eslint app/javascript/** --fix",
-    "prettier": "yarn prettier --check '*'",
+    "prettier:check": "yarn prettier --check '*'",
     "prettier:fix": "yarn prettier --write '*'",
     "prepare": "husky install",
-    "rubocop": "rubocop",
+    "rubocop:check": "rubocop",
     "rubocop:fix": "rubocop -A"
   },
   "dependencies": {
