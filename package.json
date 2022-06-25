@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "lint": "yarn eslint app/javascript/**",
-    "pre-commit": "lint-staged",
+    "lint:fix": "yarn eslint app/javascript/** --fix",
+    "prettier": "yarn prettier --check '*'",
     "prettier:fix": "yarn prettier --write '*'",
-    "prettier:check": "yarn prettier --check '*'"
+    "prepare": "husky install",
+    "rubocop": "rubocop",
+    "rubocop:fix": "rubocop -A"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
@@ -16,6 +19,7 @@
     "@rails/webpacker": "5.4.3",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.1.3",
+    "lint-staged": "^13.0.3",
     "mapbox-gl": "^2.6.1",
     "places.js": "^1.19.0",
     "stimulus": "^3.0.1",
@@ -25,8 +29,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@commitlint/cli": "^15.0.0",
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "@prettier/plugin-ruby": "^3.1.2",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.0.0",
