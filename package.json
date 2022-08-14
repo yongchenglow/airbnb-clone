@@ -10,6 +10,12 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1"
   }
 }
