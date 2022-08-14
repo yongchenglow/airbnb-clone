@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "airbnb-clone",
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.1.0",
@@ -11,11 +11,14 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier:fix": "yarn prettier --write '*'",
+    "prettier:check": "yarn prettier --check '*'"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
   }
 }
