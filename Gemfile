@@ -70,6 +70,7 @@ group :development do
 
   # Add Rubocop
   gem "rubocop"
+  gem 'rubocop-discourse'
 end
 
 group :test do
