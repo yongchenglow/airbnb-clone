@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname "$0")/_/husky.sh"
 
-bundle exec rubocop -a
+echo "husky > Running pre-commit hooks"
 yarn lint-staged
+echo "husky > Finished running pre-commit hooks"
