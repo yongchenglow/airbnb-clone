@@ -2,5 +2,9 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "husky > Running pre-commit hooks"
+
+echo "husky > Running lint-staged"
 yarn lint-staged
+echo "husky > Running rubocop"
+bundle exec rubocop -a
 echo "husky > Finished running pre-commit hooks"
