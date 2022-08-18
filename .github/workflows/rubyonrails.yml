@@ -37,7 +37,7 @@ jobs:
           yarn install --frozen-lockfile
       - name: Run Rubocop
         run: |
-          bundle exec rubocop --parallel
+          yarn rubocop:check
       - name: Run Prettier
         run: |
           yarn prettier:check

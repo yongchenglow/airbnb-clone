@@ -26,6 +26,7 @@
 !/tmp/storage/.keep
 
 /public/assets
+/vendor/*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
@@ -53,4 +54,3 @@ LICENSE
 Procfile.dev
 Rakefile
 yarn.lock
-.prettierignore

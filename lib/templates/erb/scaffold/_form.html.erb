@@ -1,15 +1,12 @@
-<%# frozen_string_literal: true %>
-<%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
-  <%%= f.error_notification %>
-  <%%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<eext1 /> <eext2 /> ) do |f| %>
+<eext3 />
+<eext4 />
 
-  <div class="form-inputs">
-  <%- attributes.each do |attribute| -%>
-    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
-  <%- end -%>
-  </div>
+<div class="form-inputs">
+  <eext5> <eext6 /> : <eext7 /> %> </eext5>
+</div>
 
-  <div class="form-actions">
-    <%%= f.button :submit %>
-  </div>
-<%% end %>
+<div class="form-actions">
+  <eext8 />
+</div>
+<eext9 />
