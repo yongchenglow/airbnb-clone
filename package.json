@@ -16,8 +16,8 @@
     "lint:check": "yarn prettier -c -u '**/*' && bundle exec rubocop",
     "prettier:fix": "yarn prettier -w -u '**/*'",
     "prettier:check": "yarn prettier -c -u '**/*'",
-    "rubocop:fix": "bundle exec rubocop -A",
-    "rubocop:check": "bundle exec rubocop"
+    "rubocop:fix": "bundle exec rubocop -A --parallel",
+    "rubocop:check": "bundle exec rubocop --parallel"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
