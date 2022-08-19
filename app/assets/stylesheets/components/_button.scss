@@ -1,0 +1,19 @@
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+.btn-mybnb {
+  color: white;
+}
+
+.btn-sm {
+  border-radius: $border-radius;
+}

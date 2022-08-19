@@ -3,17 +3,21 @@
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-
 // General style
-$font-family-base: "Roboto", sans-serif;
+$font-family-sans-serif: $body-font;
+$headings-font-family: $headers-font;
 $body-bg: $light-gray;
 $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$mybnb-primary: #ff5a5f;
 $secondary: #767676;
+// $custom-colors: (
+//   "mybnb": #ff5a5f
+// );
+
+// Merge the maps
+// $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Buttons & inputs' radius
 $border-radius: 0.5rem;
