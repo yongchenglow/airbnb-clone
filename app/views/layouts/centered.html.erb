@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/components/head' %>
+  </head>
+  <body>
+    <%= render 'layouts/components/navbar' %>
+    <%= render 'layouts/components/flashes' %>
+    <div class="py-3">
+      <div class="container-fluid d-flex justify-content-center mt-3">
+        <div class="card container-fixed-xxs border-0 shadow-sm">
+          <div class="card-body">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'layouts/components/footer' %>
+  </body>
+</html>

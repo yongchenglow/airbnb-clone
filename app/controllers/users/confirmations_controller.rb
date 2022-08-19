@@ -2,6 +2,7 @@
 
 module Users
   class ConfirmationsController < Devise::ConfirmationsController
+    layout "centered"
     # GET /resource/confirmation/new
     # def new
     #   super

@@ -2,6 +2,7 @@
 
 module Users
   class PasswordsController < Devise::PasswordsController
+    layout "centered"
     # GET /resource/password/new
     # def new
     #   super

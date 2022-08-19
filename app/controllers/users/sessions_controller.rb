@@ -2,6 +2,7 @@
 
 module Users
   class SessionsController < Devise::SessionsController
+    layout "centered"
     # before_action :configure_sign_in_params, only: [:create]
     # GET /resource/sign_in
     # def new
