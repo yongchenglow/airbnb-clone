@@ -1,8 +1,44 @@
-<title>MyBnB</title>
+<% title = "MyBnB" %>
+<% description = "Yong Cheng Low's AirBnB Clone MyBnB" %>
+<% author = "Yong Cheng Low" %>
+<% url = "https://airbnb-yc.herokuapp.com" %>
+<% image = "logo.png" %>
+<% favicon_image = "icon.png" %>
+<% twitter_account = "@YongChengLow1" %>
+
+<title><%= title %></title>
+<%= favicon_link_tag asset_path(favicon_image) %>
+<meta
+  name="description"
+  content="<%= description %>"
+/>
+<meta
+  name="keywords"
+  content="Yong Cheng Low, YC, Le Wagon, AirBnB, MyBnB"
+/>
+<meta name="author" content="<%= author %>" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 />
+<meta name="robots" content="index, follow" />
+
+<!-- Facebook Open Graph data -->
+<meta property="og:title" content="<%= title %>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= url %>" />
+<meta property="og:image" content='<%= image_url("#{image}" )%>' />
+<meta property="og:description" content="<%= description %>" />
+<meta property="og:site_name" content="<%= title %>" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="<%= twitter_account %>" />
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>" />
+<meta name="twitter:creator" content="<%= twitter_account %>" />
+<meta name="twitter:image:src" content='<%= image_url("#{image}" )%>' />
+
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
 <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
