@@ -4,8 +4,35 @@
   data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :photo, required: true, as: :file %>
+  <div class="form-inputs" data-controller="image-preview">
+    <div class="text-center">
+      <%= image_tag("profile-user.png",
+          height: "100px",
+          width: "100px",
+          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+          data: {
+            "image-preview-target": "output",
+            action: "click->image-preview#uploadFile"
+          }
+      ) %>
+      <div class="mt-2 mb-3">
+        <button type="button" class="btn btn-outline-mybnb" data-action="click->image-preview#uploadFile">
+          Upload a Photo
+        </button>
+      </div>
+    </div>
+
+    <%= f.input :photo,
+                label: false,
+                required: true,
+                as: :file,
+                input_html: {
+                  class: "d-none",
+                  data: {
+                    "image-preview-target": "input",
+                    action: "image-preview#readURL"
+                  }
+                } %>
     <%=
       f.input :first_name,
               required: true,

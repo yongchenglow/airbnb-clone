@@ -10,5 +10,11 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :photos, attached: true, content_type: %i[png jpg jpeg]
+  validates :photo,
+            attached: true,
+            content_type: %i[png jpg jpeg],
+            size: {
+              less_than: 5.megabytes,
+              message: "File must me less than 5mb"
+            }
 end
