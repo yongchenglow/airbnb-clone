@@ -12,24 +12,24 @@
     <div class="text-center">
       <% if current_user.photo.key %>
         <%= cl_image_tag current_user.photo.key,
-          height: "100px",
-          width: "100px",
-          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
-          data: {
-            "image-preview-target": "output",
-            action: "click->image-preview#uploadFile"
-          }
-      %>
+              height: "100px",
+              width: "100px",
+              style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+              data: {
+                "image-preview-target": "output",
+                action: "click->image-preview#uploadFile"
+              }
+        %>
       <% else %>
-      <%= image_tag("profile-user.png",
-          height: "100px",
-          width: "100px",
-          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
-          data: {
-            "image-preview-target": "output",
-            action: "click->image-preview#uploadFile"
-          }
-      ) %>
+        <%= image_tag("profile-user.png",
+              height: "100px",
+              width: "100px",
+              style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+              data: {
+                "image-preview-target": "output",
+                action: "click->image-preview#uploadFile"
+              }
+        ) %>
       <% end %>
       <div class="mt-2 mb-3">
         <button type="button" class="btn btn-outline-mybnb" data-action="click->image-preview#uploadFile">

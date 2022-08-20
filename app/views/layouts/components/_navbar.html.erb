@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+  <div class="container-xxl">
+    <%= link_to root_path, class: "navbar-brand", style: "margin-top:-0.375rem;" do %>
       <%=
         image_tag 'logo.png'
       %>
@@ -20,30 +20,52 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to 'Flats', '#', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Favourites', '#', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Bookings', '#', class: 'nav-link' %>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'Home', '#', class: 'nav-link' %>
-          </li>
           <li class="nav-item">
-            <%= link_to 'Messages', '#', class: 'nav-link' %>
+            <%= link_to 'Host', '#', class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
-            <%=
-              image_tag 'profile-user.png',
-                        class: 'avatar dropdown-toggle',
-                        id: 'navbarDropdown',
-                        data: {
-                          bs_toggle: 'dropdown',
-                        },
-                        'aria-haspopup': true,
-                        'aria-expanded': false
-            %>
+            <% if user_signed_in? && current_user.photo.key %>
+              <%= cl_image_tag current_user.photo.key,
+                  class: 'avatar dropdown-toggle',
+                  height: "40",
+                  width: "40",
+                  style: "cursor:pointer;object-fit: cover;",
+                  id: 'navbarDropdown',
+                  data: {
+                    bs_toggle: 'dropdown',
+                  },
+                  'aria-haspopup': true,
+                  'aria-expanded': false
+              %>
+            <% else %>
+              <%=
+                image_tag 'profile-user.png',
+                  class: 'avatar dropdown-toggle',
+                  id: 'navbarDropdown',
+                  data: {
+                    bs_toggle: 'dropdown',
+                  },
+                  'aria-haspopup': true,
+                  'aria-expanded': false
+              %>
+            <% end %>
             <div
               class="dropdown-menu dropdown-menu-end"
               aria-labelledby="navbarDropdown"
             >
-              <%= link_to 'Action', '#', class: 'dropdown-item' %>
-              <%= link_to 'Another action', '#', class: 'dropdown-item' %>
+              <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
               <%=
                 link_to 'Log out',
                         destroy_user_session_path,
