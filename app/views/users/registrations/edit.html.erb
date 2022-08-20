@@ -1,12 +1,63 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= link_to :back , class: "btn btn-light", style:"margin-left: -3rem; margin-top: -5rem;"  do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
+
+<h2 class="text-center mb-4" style="margin-top: -1rem;">My Profile</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },
   data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :photo, required: true, as: :file %>
-    <%= f.input :email, required: true, autofocus: true %>
+  <div class="form-inputs" data-controller="image-preview">
+    <div class="text-center">
+      <% if current_user.photo.key %>
+        <%= cl_image_tag current_user.photo.key,
+          height: "100px",
+          width: "100px",
+          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+          data: {
+            "image-preview-target": "output",
+            action: "click->image-preview#uploadFile"
+          }
+      %>
+      <% else %>
+      <%= image_tag("profile-user.png",
+          height: "100px",
+          width: "100px",
+          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+          data: {
+            "image-preview-target": "output",
+            action: "click->image-preview#uploadFile"
+          }
+      ) %>
+      <% end %>
+      <div class="mt-2 mb-3">
+        <button type="button" class="btn btn-outline-mybnb" data-action="click->image-preview#uploadFile">
+          Upload a Photo
+        </button>
+      </div>
+    </div>
+    <%= f.input :photo,
+                label: false,
+                required: true,
+                as: :file,
+                input_html: {
+                  class: "d-none",
+                  data: {
+                    "image-preview-target": "input",
+                    action: "image-preview#readURL"
+                  }
+                } %>
+
+    <%= f.input :email,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: {
+                  autocomplete: 'email',
+                  placeholder: 'Email',
+                }
+    %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>
@@ -15,38 +66,64 @@
     <% end %>
 
     <%=
+      f.input :first_name,
+              required: true,
+              label: false,
+              autofocus: true,
+              input_html: {
+                autocomplete: 'first-name',
+                placeholder: 'First Name',
+              }
+    %>
+    <%=
+      f.input :last_name,
+              required: true,
+              label: false,
+              autofocus: false,
+              input_html: {
+                autocomplete: 'last-name',
+                placeholder: 'Last Name',
+              }
+    %>
+    <%=
+      f.input :current_password,
+              hint: 'Fill to confirm your changes',
+              required: true,
+              label: false,
+              input_html: {
+                autocomplete: 'current-password',
+                placeholder: 'Current Password',
+              }
+    %>
+
+    <%=
       f.input :password,
               hint: "leave it blank if you don't want to change it",
               required: false,
+              label: false,
               input_html: {
                 autocomplete: 'new-password',
+                placeholder: 'New Password',
               }
     %>
     <%=
       f.input :password_confirmation,
               required: false,
+              label: false,
               input_html: {
                 autocomplete: 'new-password',
+                placeholder: 'Confirm New Password',
               }
     %>
-    <%=
-      f.input :current_password,
-              hint: 'we need your current password to confirm your changes',
-              required: true,
-              input_html: {
-                autocomplete: 'current-password',
-              }
-    %>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, 'Update' %>
+  <div class="form-actions d-grid my-3">
+    <%= f.button :submit, 'Update', class: "btn-mybnb" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>
+<p class="text-center mt-5">
   Unhappy?
   <%=
     link_to 'Cancel my account',
@@ -57,5 +134,3 @@
             method: :delete
   %>
 </p>
-
-<%= link_to 'Back', :back %>
