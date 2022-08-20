@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :rememberable,
          :validatable,
          :trackable
+
+  has_one_attached :photo
+
+  validates :photos, attached: true, content_type: %i[png jpg jpeg]
 end
