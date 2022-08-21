@@ -7,16 +7,15 @@
   <div class="form-inputs" data-controller="image-preview">
     <div class="text-center">
       <%= image_tag("profile-user.png",
-          height: "100px",
-          width: "100px",
-          style: "cursor:pointer;object-fit: cover;border-radius: 50%;",
+          class: 'avatar-xl',
+          style: "cursor:pointer;",
           data: {
             "image-preview-target": "output",
             action: "click->image-preview#uploadFile"
           }
       ) %>
       <div class="mt-2 mb-3">
-        <button type="button" class="btn btn-outline-mybnb" data-action="click->image-preview#uploadFile">
+        <button type="button" class="btn btn-outline-mybnb btn-sm" data-action="click->image-preview#uploadFile">
           Upload a Photo
         </button>
       </div>

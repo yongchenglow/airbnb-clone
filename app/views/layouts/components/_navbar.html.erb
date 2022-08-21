@@ -36,31 +36,13 @@
             <%= link_to 'Host', '#', class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
-            <% if user_signed_in? && current_user.photo.key %>
-              <%= cl_image_tag current_user.photo.key,
-                  class: 'avatar dropdown-toggle',
-                  height: "40",
-                  width: "40",
-                  style: "cursor:pointer;object-fit: cover;",
-                  id: 'navbarDropdown',
-                  data: {
-                    bs_toggle: 'dropdown',
-                  },
-                  'aria-haspopup': true,
-                  'aria-expanded': false
-              %>
-            <% else %>
-              <%=
-                image_tag 'profile-user.png',
-                  class: 'avatar dropdown-toggle',
-                  id: 'navbarDropdown',
-                  data: {
-                    bs_toggle: 'dropdown',
-                  },
-                  'aria-haspopup': true,
-                  'aria-expanded': false
-              %>
-            <% end %>
+            <%= render 'shared/atoms/avatar',
+              size: 'md',
+              classes: 'dropdown-toggle',
+              pointer: true,
+              id: 'navbarDropdown',
+              data: { bs_toggle: 'dropdown', }
+            %>
             <div
               class="dropdown-menu dropdown-menu-end"
               aria-labelledby="navbarDropdown"
