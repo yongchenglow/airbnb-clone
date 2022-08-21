@@ -11,6 +11,10 @@ Rails.application.routes.draw do
                sign_in: "login" # Use user/login instead of sign_in
              }
 
+  devise_scope :user do
+    get "users/:id", to: "users/registrations#show", as: :user
+  end
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
