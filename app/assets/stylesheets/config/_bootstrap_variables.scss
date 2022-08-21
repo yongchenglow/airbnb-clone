@@ -11,15 +11,17 @@ $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary: $blue;
-$success: $green;
-$info: $yellow;
-$danger: $red;
-$warning: $orange;
+$secondary: #767676;
+// $custom-colors: (
+//   "mybnb": #ff5a5f
+// );
+
+// Merge the maps
+// $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Buttons & inputs' radius
-$border-radius: 2px;
-$border-radius-lg: 2px;
-$border-radius-sm: 2px;
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-sm: 0.25rem;
 
 // Override other variables below!

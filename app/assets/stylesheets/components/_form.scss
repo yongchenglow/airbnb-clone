@@ -1,0 +1,18 @@
+.form-label {
+  margin-bottom: 0.25rem;
+}
+
+.form-control {
+  background-color: transparent;
+  border-color: $mybnb;
+}
+
+.form-control:focus {
+  background-color: transparent;
+}
+
+::placeholder {
+  color: $gray-400;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
