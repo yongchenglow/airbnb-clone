@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/components/head' %>
+  </head>
+  <body>
+    <%= render 'layouts/components/tags' %>
+    <%= render 'layouts/components/navbar' %>
+    <%= render 'layouts/components/flashes' %>
+    <div class='container py-3'>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/components/footer' %>
+  </body>
+</html>

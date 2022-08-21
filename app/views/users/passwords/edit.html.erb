@@ -1,0 +1,41 @@
+<h2 class="text-center mb-4">Change your password</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put },
+  data: {turbo: false}) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.full_error :reset_password_token %>
+
+  <div class="form-inputs">
+    <%=
+      f.input :password,
+              label: 'New password',
+              required: true,
+              label: false,
+              autofocus: true,
+              input_html: {
+                autocomplete: 'new-password',
+                placeholder: 'New Password'
+              }
+    %>
+    <%=
+      f.input :password_confirmation,
+              label: 'Confirm your new password',
+              required: true,
+              label: false,
+              input_html: {
+                autocomplete: 'new-password',
+                placeholder: 'Confirm New Password'
+              }
+    %>
+  </div>
+
+  <div class="form-actions d-grid my-3">
+    <%= f.button :submit, 'Change my password', class: "btn-mybnb" %>
+  </div>
+<% end %>
+
+<div class="text-center fs-7 mt-5">
+  <%= link_to "Remember your password? Login!", new_session_path(resource_name), class:"text-decoration-none" %>
+</div>
