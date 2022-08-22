@@ -17,7 +17,10 @@
     "prettier:fix": "yarn prettier -w -u '**/*'",
     "prettier:check": "yarn prettier -c -u '**/*'",
     "rubocop:fix": "bundle exec rubocop -A --parallel",
-    "rubocop:check": "bundle exec rubocop --parallel"
+    "rubocop:check": "bundle exec rubocop --parallel",
+    "test": "rails test",
+    "test:coverage": "rails test && open coverage/index.html",
+    "coverage": "open coverage/index.html"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
