@@ -55,3 +55,4 @@ Procfile.dev
 Rakefile
 yarn.lock
 db/schema.rb
+coverage
