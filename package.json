@@ -10,6 +10,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
+    "setup": "bundle install && yarn install && husky install && rails db:create && rails db:migrate",
     "build": "webpack --config webpack.config.js",
     "prepare": "husky install",
     "lint:fix": "yarn prettier -w -u '**/*' && bundle exec rubocop -A",
