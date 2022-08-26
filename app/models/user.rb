@@ -17,4 +17,6 @@ class User < ApplicationRecord
               less_than: 5.megabytes,
               message: "File must me less than 5mb"
             }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
