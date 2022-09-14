@@ -25,3 +25,11 @@ $border-radius-lg: 1rem;
 $border-radius-sm: 0.25rem;
 
 // Override other variables below!
+$form-floating-label-opacity: 1;
+$form-floating-label-transform: scale(0.75) translateY(-0.75rem)
+  translateX(1.125rem);
+$form-floating-input-padding-t: 0.625rem;
+$form-floating-height: 3rem;
+$form-floating-padding-x: 1rem;
+$form-floating-padding-y: 0.75rem;
+$input-btn-focus-width: 0.0625rem !default;
