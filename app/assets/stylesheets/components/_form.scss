@@ -4,7 +4,7 @@
 
 .form-control {
   background-color: transparent;
-  border-color: $mybnb;
+  border-color: tint-color($mybnb, 50%);
 }
 
 .form-control:focus {
@@ -15,4 +15,22 @@
   color: $gray-400;
   font-weight: 300;
   font-size: 0.875rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-select ~ label {
+  background-color: white;
+  padding: 0rem 0.25rem;
+  width: auto;
+  height: auto;
+  color: tint-color(black, 50%);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown):focus ~ label,
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-select ~ label {
+  color: tint-color($component-active-bg, 50%);
 }

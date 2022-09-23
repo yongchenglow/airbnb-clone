@@ -37,7 +37,6 @@
                 } %>
 
     <%= f.input :email,
-                label: false,
                 required: true,
                 autofocus: true,
                 input_html: {
@@ -55,7 +54,6 @@
     <%=
       f.input :first_name,
               required: true,
-              label: false,
               autofocus: true,
               input_html: {
                 autocomplete: 'first-name',
@@ -65,7 +63,6 @@
     <%=
       f.input :last_name,
               required: true,
-              label: false,
               autofocus: false,
               input_html: {
                 autocomplete: 'last-name',
@@ -76,7 +73,6 @@
       f.input :current_password,
               hint: 'Fill to confirm your changes',
               required: true,
-              label: false,
               input_html: {
                 autocomplete: 'current-password',
                 placeholder: 'Current Password',
