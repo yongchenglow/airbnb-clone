@@ -445,6 +445,6 @@ SimpleForm.setup do |config|
     radio_buttons: :vertical_collection,
     range: :vertical_range,
     time: :vertical_multi_select,
-    select: :floating_labels_select
+    select: :floating_labels_select,
   }
 end

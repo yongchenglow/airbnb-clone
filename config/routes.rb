@@ -5,10 +5,10 @@ Rails.application.routes.draw do
                passwords: "users/passwords",
                registrations: "users/registrations",
                sessions: "users/sessions",
-               unlocks: "users/unlocks"
+               unlocks: "users/unlocks",
              },
              path_names: {
-               sign_in: "login" # Use user/login instead of sign_in
+               sign_in: "login", # Use user/login instead of sign_in
              }
 
   devise_scope :user do

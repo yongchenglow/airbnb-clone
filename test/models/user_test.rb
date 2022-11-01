@@ -10,14 +10,14 @@ class UserTest < ActiveSupport::TestCase
   test "Should not save user with invalid email" do
     file =
       URI.open(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg",
       )
     user =
       User.new(
         email: "testgmail.com",
         password: "password",
         first_name: "Alice",
-        last_name: "Huh"
+        last_name: "Huh",
       )
     user.photo.attach(io: file, filename: "nes.png")
     assert_not user.save
@@ -26,14 +26,14 @@ class UserTest < ActiveSupport::TestCase
   test "Should not save user when password is too short" do
     file =
       URI.open(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg",
       )
     user =
       User.new(
         email: "test@gmail.com",
         password: "short",
         first_name: "Alice",
-        last_name: "Huh"
+        last_name: "Huh",
       )
     user.photo.attach(io: file, filename: "nes.png")
     assert_not user.save
@@ -42,7 +42,7 @@ class UserTest < ActiveSupport::TestCase
   test "Should not save user with no first name" do
     file =
       URI.open(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg",
       )
     user =
       User.new(email: "test@gmail.com", password: "password", last_name: "Huh")
@@ -53,13 +53,13 @@ class UserTest < ActiveSupport::TestCase
   test "Should not save user with no last name" do
     file =
       URI.open(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg",
       )
     user =
       User.new(
         email: "test@gmail.com",
         password: "password",
-        first_name: "Alice"
+        first_name: "Alice",
       )
     user.photo.attach(io: file, filename: "nes.png")
     assert_not user.save
@@ -71,7 +71,7 @@ class UserTest < ActiveSupport::TestCase
         email: "test@gmail.com",
         password: "password",
         first_name: "Alice",
-        last_name: "Huh"
+        last_name: "Huh",
       )
     assert_not user.save
   end
@@ -79,14 +79,14 @@ class UserTest < ActiveSupport::TestCase
   test "Should save user when provided with correct information" do
     file =
       URI.open(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg",
       )
     user =
       User.new(
         email: "test@gmail.com",
         password: "password",
         first_name: "Alice",
-        last_name: "Huh"
+        last_name: "Huh",
       )
     user.photo.attach(io: file, filename: "nes.png")
     assert user.save
