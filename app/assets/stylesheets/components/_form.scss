@@ -34,3 +34,7 @@
 .form-floating > .form-select ~ label {
   color: tint-color($component-active-bg, 50%);
 }
+
+.form-floating label {
+  color: $foggy;
+}
